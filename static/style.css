@@ -1,0 +1,202 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    /* background-color: #161b22; */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Main Content usando Grid */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 75% para leftSection, 25% para rightSection */
+    grid-template-rows: auto 1fr; /* Las filas se ajustan por separado */
+    gap: 20px;
+    grid-template-areas: 
+        "left-section right-section"
+        "bottom-left bttom-left"
+        "footer footer";
+}
+
+/* Contenido de la izquierda (incluye avatar) */
+#leftSection {
+    display: flex;
+    flex-direction: row; /* Asegurarse de que los elementos estén uno debajo del otro */
+    align-items: center;
+    justify-content: start;
+    grid-area: left-section;
+    background-color: #21262d;
+    border-radius: 8px;
+    padding: 20px;
+    height: 200px; /* Fijar altura para no afectar al otro div */
+    margin-bottom: 0; /* Eliminar espacio debajo de leftSection */
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; /* Asegurarse de que no haya espacio debajo del avatar */
+}
+
+.avatar img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+}
+
+#leftSection p, #leftSection .social-icons {
+    text-align: center;
+}
+
+/* Sección derecha sobre mi */
+#rightSection {
+    background-color: #21262d;
+    border-radius: 8px;
+    padding: 20px;
+    grid-area: right-section;
+    height: 200px; /* Mantener altura independiente */
+}
+
+#rightSection h2 {
+    margin-bottom: 10px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.skills span {
+    background-color: #0d1117;
+    color: #58a6ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+/* Sección inferior izquierda */
+.bottom-left {
+    display: flex;
+    justify-content: space-between;
+    grid-area: bottom-left; /* Ya está asignado correctamente */
+    margin-top: 0;
+    flex-wrap: wrap; /* Permite que los elementos dentro de bottom-left se ajusten mejor */
+}
+
+#studiesSection {
+    background-color: #21262d;
+    border-radius: 8px;
+    padding: 20px;
+    width: 50%;
+}
+
+#availabilitySection {
+    background-color: #183b6d;
+    border-radius: 8px;
+    padding: 20px;
+    /* width: 30%; */
+}
+
+.project-card {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #30363d;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #58a6ff;
+}
+
+/* Proyectos */
+#projectsSection {
+    grid-column: span 2; /* Toma todo el ancho de las dos columnas */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#projectsSection a{
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+#projectsSection h2 {
+    margin-bottom: 10px;
+}
+
+.columnaProj{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* Footer */
+.footer {
+    /* grid-column: span 2; Footer toma todo el ancho */
+    text-align: center;
+    background-color: #21262d;
+    padding: 10px;
+    border-radius: 8px;
+    height: 100px; /* El footer ahora toma el 25% de la altura */
+}
+
+/* Para mejorar la visibilidad del elemento arrastrado */
+.content-box {
+    cursor: move;
+    transition: transform 0.3s ease;
+}
+
+/* Para agregar sombra y mejorar la visibilidad mientras se arrastra */
+.content-box:active {
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Añadir borde de los elementos mientras se están reordenando */
+.content-box.placeholder {
+    border: 2px dashed #ddd;
+}
+
+/* Clase de arrastre activa */
+.content-box.sortable-ghost {
+    opacity: 0.4;
+    transform: scale(1.05); /* Le da un ligero aumento de tamaño mientras se arrastra */
+}
+
+
+/* Mejoras de responsividad */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 15px;
+    }
+
+    .bottom-left {
+        flex-direction: column;
+    }
+
+    #studiesSection, #availabilitySection {
+        width: 100%;
+    }
+}
+
+

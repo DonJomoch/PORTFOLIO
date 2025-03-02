@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Drag and Drop</title>
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Importar SortableJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js" defer></script>
+    <script src="templates/main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="mainContent" class="main-content">
+            <!-- Sección Izquierda (incluye Avatar) -->
+            <div class="content-box" id="leftSection">
+                <div class="avatar">
+                    <img src="templates/IMG_4219.jpg" alt="Avatar">
+                </div>
+                <p>
+                    ¡Hola! Soy <strong>Joel Mojal</strong>, desarrollador front-end, graduado como técnico superior en programación.
+                </p>
+                <div class="social-icons">
+                    <span>@mojaljoel</span>
+                    <span>🔗</span>
+                    <span>📸mojaljoel</span>
+                </div>
+            </div>
+
+            <!-- Sección Derecha -->
+            <div class="content-box" id="rightSection">
+                <h2>Sobre mi</h2>
+                <p>
+                    Persona de baja estatura que programa, <strong>capaz de centrar un sin morir en el intento.</strong>
+                </p>
+                <div class="skills">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    <span>TypeScript</span><span>Python</span><span>React</span>
+                    <span>PHP</span><span>MySQL</span><span>Astro</span>
+                </div>
+            </div>
+
+            <!-- Debajo de Left Section -->
+            <div class="bottom-left">
+                <!-- Sección Estudios -->
+                <div class="content-box" id="studiesSection">
+                    <h2>Estudios</h2>
+                    <p><strong>Técnico Superior en Programación</strong></p>
+                    <span>Jaume Viladoms - Sabadell</span>
+                    <p><strong>Técnico en MicroInformatica y redes</strong></p>
+                    <span>Jaume Viladoms - Sabadell</span>
+                    <h2>Puestos de Trabajo</h2>
+                    <p><strong>Tecnico Preventivo Departament d'Educació</strong></p>
+                    <span>Semic - Manresa</span>
+                    <p><strong>Programador PHP & JAVA</strong></p>
+                    <span>Terracom - Terrassa</span>
+                </div>
+
+                <div class="content-box columnaProj">
+                    <!-- Sección Disponibilidad -->
+                    <div class="content-box" id="availabilitySection">
+                        <span>🟢 Disponible para trabajar en 15 dias</span>
+                    </div>
+
+                    <!-- Proyectos -->
+                    <div class="content-box" id="projectsSection">
+                        <h2>Proyectos</h2>
+                        <a href="">
+                            <div class="project-card">Organizador de Python</div>
+                        </a>
+                        
+                        <a href="templates/clothfinder.html">
+                            <div class="project-card">ClothFinder</div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Footer -->
+            <div class="content-box footer" id="footerSection">
+                <p>© 2024 Diseñado por Joel Mojal</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
